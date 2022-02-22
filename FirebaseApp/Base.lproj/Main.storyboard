@@ -22,17 +22,17 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8v-9i-hK0">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edf-8j-jXX">
                                         <rect key="frame" x="0.0" y="59" width="335" height="34"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZU2-bw-Ou1">
                                         <rect key="frame" x="0.0" y="118" width="335" height="34"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -80,7 +80,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="NPz-CT-liK" kind="show" id="MmS-h2-WMu"/>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1W-Hq-Nsj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,6 +103,7 @@
                         <outlet property="emailTextField" destination="edf-8j-jXX" id="q8N-R5-48Z"/>
                         <outlet property="nameTextField" destination="r8v-9i-hK0" id="ufC-9i-6SK"/>
                         <outlet property="passwordTextField" destination="ZU2-bw-Ou1" id="0Ab-Za-YIp"/>
+                        <segue destination="NPz-CT-liK" kind="show" identifier="signin" id="EaR-cM-P5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -130,12 +131,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-JA-lDV">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nTx-fF-O6n">
                                         <rect key="frame" x="0.0" y="48" width="335" height="34"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -177,7 +178,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="NPz-CT-liK" kind="show" id="5yi-XC-jqa"/>
+                                    <action selector="logInButton:" destination="ahr-Ym-lno" eventType="touchUpInside" id="p41-Cw-bH0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -199,6 +200,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="dgK-JA-lDV" id="sba-fP-FFQ"/>
                         <outlet property="passwordTextField" destination="nTx-fF-O6n" id="vSF-hN-u71"/>
+                        <segue destination="NPz-CT-liK" kind="show" identifier="login" id="yZ1-p7-0Df"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGH-KJ-MZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -238,7 +240,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3B-B9-2u0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="CLy-xX-bFO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="554" y="848"/>
+            <point key="canvasLocation" x="580" y="924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="09P-ci-sB4">
@@ -257,11 +259,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELK-cW-5iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250" y="848"/>
+            <point key="canvasLocation" x="-262" y="924"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MmS-h2-WMu"/>
+        <segue reference="EaR-cM-P5c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
